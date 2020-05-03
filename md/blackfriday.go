@@ -1,7 +1,7 @@
 package md
 
 import (
-	"github.com/russross/blackfriday/v2"
+	"gopkg.in/russross/blackfriday.v2"
 	"io/ioutil"
 	"strings"
 )
