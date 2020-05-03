@@ -10,4 +10,3 @@ type Parser interface {
 	// 2. 并发的利用md解析lib来生成html源文件返回
 	Markdown2HTML(mdfile string) (html string, err error)
 }
-

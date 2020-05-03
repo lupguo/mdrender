@@ -21,7 +21,7 @@ func (p *BlackFriday) Parse(input []byte) (html []byte) {
 	return blackfriday.Run(input)
 }
 
-// Markdown2HTML
+// Markdown2HTML 将指定目录位置的markdown文件，解析生成html文档
 func (p *BlackFriday) Markdown2HTML(mdfile string) (html string, err error) {
 	// 读取md文件
 	b, err := ioutil.ReadFile(mdfile)

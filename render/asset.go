@@ -1,6 +1,5 @@
 package render
 
-
 var indexTpl = `
 <!doctype html>
 <html lang="en">

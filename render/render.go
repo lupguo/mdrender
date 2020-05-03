@@ -7,7 +7,7 @@ import (
 )
 
 // NewTmpl 初始化Markdown渲染模板
-func NewTmpl(f string) (*tmpl, error) {
+func NewTmpl(f string) (*Tmpl, error) {
 	if f == "" {
 		return defaultTmpl, nil
 	}
@@ -15,18 +15,17 @@ func NewTmpl(f string) (*tmpl, error) {
 	if err != nil {
 		return nil, err
 	}
-	return &tmpl{string(file)}, nil
+	return &Tmpl{string(file)}, nil
 }
 
-
-// tmpl 渲染模板
-type tmpl struct {
+// Tmpl 渲染模板
+type Tmpl struct {
 	content string
 }
 
-var defaultTmpl = &tmpl{indexTpl}
+var defaultTmpl = &Tmpl{indexTpl}
 
-// HTML 待渲染的HTML实例
+// Content 待渲染到HTML模板上的数据内容实例
 type Content struct {
 	CSS   string
 	Title string
@@ -34,7 +33,7 @@ type Content struct {
 }
 
 // Render 基于模板结合HTML实例数据，渲染HTML
-func (tpl *tmpl) Render(c *Content) (html string, err error) {
+func (tpl *Tmpl) Render(c *Content) (html string, err error) {
 	t := template.Must(template.New("md").Parse(tpl.content))
 
 	var buf = &bytes.Buffer{}

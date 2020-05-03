@@ -13,6 +13,7 @@ import (
 	"path"
 )
 
+// Version 版本信息
 const Version = "0.0.1"
 
 var indexTpl, mdFile, cssFile, mdPath, listen string
