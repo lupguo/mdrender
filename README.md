@@ -10,7 +10,7 @@
 
 ### 命令行安装
 ```bash
-go get -u github.com/lupguo/mdrender
+go get -u github.com/lupguo/mdrender/cmd/...
 ```
 
 ### 简单示例
